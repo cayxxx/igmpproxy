@@ -1,0 +1,37 @@
+Index: igmpproxy-0.1/src/config.c
+===================================================================
+--- igmpproxy-0.1.orig/src/config.c
++++ igmpproxy-0.1/src/config.c
+@@ -150,7 +150,31 @@ int loadConfig(char *configFile) {
+             // Read next token...
+             token = nextConfigToken();
+             continue;
+-        } else {
++        }
++	else if (strcmp("robustness",token)==0) {
++		//Got a robustness token...
++		token = nextConfigToken();
++		my_log(LOG_DEBUG,0,"Config: Robustness : %d",atoi(token));
++		commonConfig.robustnessValue = atoi(token);
++		token = nextConfigToken();
++		continue;
++	}
++	else if (strcmp("interval_query",token)==0) {
++		//Got a interval_query token...
++		token = nextConfigToken();
++		commonConfig.queryInterval = atoi(token);
++		my_log(LOG_DEBUG,0,"Config: Interval Query Timeout : %d",atoi(token));
++		token = nextConfigToken();
++		continue;
++	}
++	else if (strcmp("interval_query_response",token)==0) {
++		//Got a interval_query_response token...
++		token = nextConfigToken();
++		commonConfig.queryResponseInterval = atoi(token);
++		my_log(LOG_DEBUG,0,"Config: Interval Query Response Timeout: %d",atoi(token));
++		token = nextConfigToken();
++		continue;
++	} else {
+             // Unparsable token... Exit...
+             closeConfigFile();
+             my_log(LOG_WARNING, 0, "Unknown token '%s' in configfile", token);
