@@ -1,5 +1,5 @@
 # igmpproxy
-igmpproxy for OpenWRT. Default interval could be customized as needed.
+igmpproxy for OpenWRT. 
 
 Now some default parameters could be modified :<br>
 DEFAULT_ROBUSTNESS<br>
