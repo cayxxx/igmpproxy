@@ -7,7 +7,7 @@ DEFAULT_INTERVAL_QUERY<br>
 DEFAULT_INTERVAL_QUERY_RESPONSE<br>
 
 ## Usage:
-Replace package/network/services/igmpproxy<br><br>
+Replace package/network/services/igmpproxy before compiling<br><br>
 
 ### Modify:
 At /etc/config/igmpproxy :<br>
