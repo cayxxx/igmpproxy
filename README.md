@@ -1,0 +1,16 @@
+# igmpproxy
+igmpproxy for OpenWRT. Default interval could be customized as needed.
+
+Now some default parameters could be modified :<br>
+DEFAULT_ROBUSTNESS<br>
+DEFAULT_INTERVAL_QUERY<br>
+DEFAULT_INTERVAL_QUERY_RESPONSE<br>
+
+## Usage:
+Replace package/network/services/igmpproxy<br><br>
+
+### Modify:
+At /etc/config/igmpproxy :<br>
+option robustness xx<br>
+option interval_query xx<br>
+option interval_query_response xx<br>
